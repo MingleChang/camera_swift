@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zuC-jn-vHK">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Bv7-0a-9EV">
+            <objects>
+                <navigationController id="zuC-jn-vHK" customClass="MCNavigationController" customModule="camera_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dAD-Dk-yKt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qd2-K0-njU" kind="relationship" relationship="rootViewController" id="Bd2-4q-LEf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MBI-74-T0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-220" y="390"/>
+        </scene>
+        <!--Album View Controller-->
+        <scene sceneID="x3P-v2-80i">
+            <objects>
+                <viewController storyboardIdentifier="MCAlbumViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qd2-K0-njU" customClass="MCAlbumViewController" customModule="camera_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AFJ-Yd-xus"/>
+                        <viewControllerLayoutGuide type="bottom" id="K4N-uM-noW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="shl-Od-aWW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5fy-ct-dET">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="obB-ey-6Fp">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MCAlbumCell" id="0Gb-xE-EnM" customClass="MCAlbumCell" customModule="camera_swift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.38353987068965517" green="0.40748922413793104" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MCAddAlbumCell" id="nmL-iy-2pZ" customClass="MCAddAlbumCell" customModule="camera_swift" customModuleProvider="target">
+                                        <rect key="frame" x="110" y="64" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.38353987068965517" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qd2-K0-njU" id="heK-z4-EW4"/>
+                                    <outlet property="delegate" destination="Qd2-K0-njU" id="UGt-WB-6JK"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5fy-ct-dET" firstAttribute="top" secondItem="AFJ-Yd-xus" secondAttribute="bottom" id="Gtn-SN-nbm"/>
+                            <constraint firstItem="5fy-ct-dET" firstAttribute="leading" secondItem="shl-Od-aWW" secondAttribute="leading" id="PfK-7p-fhL"/>
+                            <constraint firstItem="K4N-uM-noW" firstAttribute="top" secondItem="5fy-ct-dET" secondAttribute="bottom" id="rhF-zb-xQC"/>
+                            <constraint firstAttribute="trailing" secondItem="5fy-ct-dET" secondAttribute="trailing" id="ydO-m0-O2L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9kP-qb-fu6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOO-ox-dy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="388"/>
+        </scene>
+    </scenes>
+</document>

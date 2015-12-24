@@ -8,20 +8,67 @@
 
 /* Begin PBXBuildFile section */
 		4C0BFC1E1C2B916F006D482E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC1D1C2B916F006D482E /* AppDelegate.swift */; };
-		4C0BFC201C2B916F006D482E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC1F1C2B916F006D482E /* ViewController.swift */; };
-		4C0BFC231C2B916F006D482E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFC211C2B916F006D482E /* Main.storyboard */; };
-		4C0BFC251C2B916F006D482E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFC241C2B916F006D482E /* Assets.xcassets */; };
-		4C0BFC281C2B916F006D482E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFC261C2B916F006D482E /* LaunchScreen.storyboard */; };
+		4C0BFC351C2B9206006D482E /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFC341C2B9206006D482E /* Asset.xcassets */; };
+		4C0BFC371C2B9237006D482E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFC361C2B9237006D482E /* LaunchScreen.storyboard */; };
+		4C0BFC391C2B9243006D482E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFC381C2B9243006D482E /* Main.storyboard */; };
+		4C0BFC3C1C2B92AE006D482E /* MCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC3B1C2B92AE006D482E /* MCViewController.swift */; };
+		4C0BFC3E1C2B92C2006D482E /* MCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC3D1C2B92C2006D482E /* MCNavigationController.swift */; };
+		4C0BFC411C2B9423006D482E /* MingleChang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC401C2B9423006D482E /* MingleChang.swift */; };
+		4C0BFC431C2B9472006D482E /* MCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC421C2B9472006D482E /* MCDevice.swift */; };
+		4C0BFC451C2B9646006D482E /* MCStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC441C2B9646006D482E /* MCStringExtension.swift */; };
+		4C0BFC471C2BAE50006D482E /* MCAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFC461C2BAE50006D482E /* MCAlbumViewController.swift */; };
+		4C0BFCFB1C2BB44D006D482E /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFCEA1C2BB44D006D482E /* FMDatabaseAdditionsVariadic.swift */; };
+		4C0BFCFC1C2BB44D006D482E /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFCEB1C2BB44D006D482E /* FMDatabaseVariadic.swift */; };
+		4C0BFCFD1C2BB44D006D482E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFCEE1C2BB44D006D482E /* FMDatabase.m */; };
+		4C0BFCFE1C2BB44D006D482E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFCF01C2BB44D006D482E /* FMDatabaseAdditions.m */; };
+		4C0BFCFF1C2BB44D006D482E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFCF21C2BB44D006D482E /* FMDatabasePool.m */; };
+		4C0BFD001C2BB44D006D482E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFCF41C2BB44D006D482E /* FMDatabaseQueue.m */; };
+		4C0BFD011C2BB44D006D482E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFCF71C2BB44D006D482E /* FMResultSet.m */; };
+		4C0BFD041C2BB538006D482E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0BFD031C2BB538006D482E /* libsqlite3.0.tbd */; };
+		4C0BFD071C2BB626006D482E /* MCAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD051C2BB626006D482E /* MCAlbumCell.swift */; };
+		4C0BFD081C2BB626006D482E /* MCAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFD061C2BB626006D482E /* MCAlbumCell.xib */; };
+		4C0BFD0B1C2BB6F6006D482E /* MCAddAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD091C2BB6F6006D482E /* MCAddAlbumCell.swift */; };
+		4C0BFD0C1C2BB6F6006D482E /* MCAddAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BFD0A1C2BB6F6006D482E /* MCAddAlbumCell.xib */; };
+		4C0BFD0E1C2BBA85006D482E /* MCAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD0D1C2BBA85006D482E /* MCAlbum.swift */; };
+		4C0BFD101C2BC050006D482E /* MCFilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD0F1C2BC050006D482E /* MCFilePath.swift */; };
+		4C0BFD121C2BCFD3006D482E /* MCCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD111C2BCFD3006D482E /* MCCameraManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C0BFC1A1C2B916F006D482E /* camera_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = camera_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0BFC1D1C2B916F006D482E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C0BFC1F1C2B916F006D482E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C0BFC221C2B916F006D482E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4C0BFC241C2B916F006D482E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4C0BFC271C2B916F006D482E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C0BFC291C2B916F006D482E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C0BFC341C2B9206006D482E /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		4C0BFC361C2B9237006D482E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C0BFC381C2B9243006D482E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4C0BFC3B1C2B92AE006D482E /* MCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCViewController.swift; sourceTree = "<group>"; };
+		4C0BFC3D1C2B92C2006D482E /* MCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCNavigationController.swift; sourceTree = "<group>"; };
+		4C0BFC401C2B9423006D482E /* MingleChang.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MingleChang.swift; sourceTree = "<group>"; };
+		4C0BFC421C2B9472006D482E /* MCDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCDevice.swift; sourceTree = "<group>"; };
+		4C0BFC441C2B9646006D482E /* MCStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStringExtension.swift; sourceTree = "<group>"; };
+		4C0BFC461C2BAE50006D482E /* MCAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAlbumViewController.swift; sourceTree = "<group>"; };
+		4C0BFC931C2BB35E006D482E /* camera_swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "camera_swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C0BFCEA1C2BB44D006D482E /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
+		4C0BFCEB1C2BB44D006D482E /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		4C0BFCED1C2BB44D006D482E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		4C0BFCEE1C2BB44D006D482E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		4C0BFCEF1C2BB44D006D482E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		4C0BFCF01C2BB44D006D482E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		4C0BFCF11C2BB44D006D482E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		4C0BFCF21C2BB44D006D482E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		4C0BFCF31C2BB44D006D482E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		4C0BFCF41C2BB44D006D482E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		4C0BFCF51C2BB44D006D482E /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		4C0BFCF61C2BB44D006D482E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		4C0BFCF71C2BB44D006D482E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		4C0BFD031C2BB538006D482E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		4C0BFD051C2BB626006D482E /* MCAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAlbumCell.swift; sourceTree = "<group>"; };
+		4C0BFD061C2BB626006D482E /* MCAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCAlbumCell.xib; sourceTree = "<group>"; };
+		4C0BFD091C2BB6F6006D482E /* MCAddAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAddAlbumCell.swift; sourceTree = "<group>"; };
+		4C0BFD0A1C2BB6F6006D482E /* MCAddAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCAddAlbumCell.xib; sourceTree = "<group>"; };
+		4C0BFD0D1C2BBA85006D482E /* MCAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAlbum.swift; sourceTree = "<group>"; };
+		4C0BFD0F1C2BC050006D482E /* MCFilePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCFilePath.swift; sourceTree = "<group>"; };
+		4C0BFD111C2BCFD3006D482E /* MCCameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCCameraManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0BFD041C2BB538006D482E /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0BFC1C1C2B916F006D482E /* camera_swift */,
+				4C0BFD021C2BB47D006D482E /* Frameworks */,
 				4C0BFC1B1C2B916F006D482E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,13 +103,144 @@
 		4C0BFC1C1C2B916F006D482E /* camera_swift */ = {
 			isa = PBXGroup;
 			children = (
+				4C0BFC481C2BB17A006D482E /* Depends */,
+				4C0BFC2F1C2B91F6006D482E /* Common */,
+				4C0BFC301C2B91F6006D482E /* Controllers */,
+				4C0BFC311C2B91F6006D482E /* Models */,
+				4C0BFC321C2B91F6006D482E /* Resources */,
+				4C0BFC331C2B91F6006D482E /* Views */,
 				4C0BFC1D1C2B916F006D482E /* AppDelegate.swift */,
-				4C0BFC1F1C2B916F006D482E /* ViewController.swift */,
-				4C0BFC211C2B916F006D482E /* Main.storyboard */,
-				4C0BFC241C2B916F006D482E /* Assets.xcassets */,
-				4C0BFC261C2B916F006D482E /* LaunchScreen.storyboard */,
 				4C0BFC291C2B916F006D482E /* Info.plist */,
+				4C0BFC931C2BB35E006D482E /* camera_swift-Bridging-Header.h */,
 			);
+			path = camera_swift;
+			sourceTree = "<group>";
+		};
+		4C0BFC2F1C2B91F6006D482E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFC3F1C2B9416006D482E /* MingleChang */,
+				4C0BFD111C2BCFD3006D482E /* MCCameraManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4C0BFC301C2B91F6006D482E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFC3A1C2B92A1006D482E /* Base */,
+				4C0BFC461C2BAE50006D482E /* MCAlbumViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4C0BFC311C2B91F6006D482E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFD0D1C2BBA85006D482E /* MCAlbum.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C0BFC321C2B91F6006D482E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFC341C2B9206006D482E /* Asset.xcassets */,
+				4C0BFC361C2B9237006D482E /* LaunchScreen.storyboard */,
+				4C0BFC381C2B9243006D482E /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C0BFC331C2B91F6006D482E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFD051C2BB626006D482E /* MCAlbumCell.swift */,
+				4C0BFD061C2BB626006D482E /* MCAlbumCell.xib */,
+				4C0BFD091C2BB6F6006D482E /* MCAddAlbumCell.swift */,
+				4C0BFD0A1C2BB6F6006D482E /* MCAddAlbumCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C0BFC3A1C2B92A1006D482E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFC3B1C2B92AE006D482E /* MCViewController.swift */,
+				4C0BFC3D1C2B92C2006D482E /* MCNavigationController.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		4C0BFC3F1C2B9416006D482E /* MingleChang */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFC441C2B9646006D482E /* MCStringExtension.swift */,
+				4C0BFC401C2B9423006D482E /* MingleChang.swift */,
+				4C0BFC421C2B9472006D482E /* MCDevice.swift */,
+				4C0BFD0F1C2BC050006D482E /* MCFilePath.swift */,
+			);
+			path = MingleChang;
+			sourceTree = "<group>";
+		};
+		4C0BFC481C2BB17A006D482E /* Depends */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFCDE1C2BB44D006D482E /* FMDB */,
+			);
+			path = Depends;
+			sourceTree = "<group>";
+		};
+		4C0BFCDE1C2BB44D006D482E /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFCDF1C2BB44D006D482E /* extra */,
+				4C0BFCEC1C2BB44D006D482E /* fmdb */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		4C0BFCDF1C2BB44D006D482E /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFCE91C2BB44D006D482E /* Swift extensions */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		4C0BFCE91C2BB44D006D482E /* Swift extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFCEA1C2BB44D006D482E /* FMDatabaseAdditionsVariadic.swift */,
+				4C0BFCEB1C2BB44D006D482E /* FMDatabaseVariadic.swift */,
+			);
+			path = "Swift extensions";
+			sourceTree = "<group>";
+		};
+		4C0BFCEC1C2BB44D006D482E /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFCED1C2BB44D006D482E /* FMDatabase.h */,
+				4C0BFCEE1C2BB44D006D482E /* FMDatabase.m */,
+				4C0BFCEF1C2BB44D006D482E /* FMDatabaseAdditions.h */,
+				4C0BFCF01C2BB44D006D482E /* FMDatabaseAdditions.m */,
+				4C0BFCF11C2BB44D006D482E /* FMDatabasePool.h */,
+				4C0BFCF21C2BB44D006D482E /* FMDatabasePool.m */,
+				4C0BFCF31C2BB44D006D482E /* FMDatabaseQueue.h */,
+				4C0BFCF41C2BB44D006D482E /* FMDatabaseQueue.m */,
+				4C0BFCF51C2BB44D006D482E /* FMDB.h */,
+				4C0BFCF61C2BB44D006D482E /* FMResultSet.h */,
+				4C0BFCF71C2BB44D006D482E /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		4C0BFD021C2BB47D006D482E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BFD031C2BB538006D482E /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			path = camera_swift;
 			sourceTree = "<group>";
 		};
@@ -122,9 +302,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0BFC281C2B916F006D482E /* LaunchScreen.storyboard in Resources */,
-				4C0BFC251C2B916F006D482E /* Assets.xcassets in Resources */,
-				4C0BFC231C2B916F006D482E /* Main.storyboard in Resources */,
+				4C0BFC391C2B9243006D482E /* Main.storyboard in Resources */,
+				4C0BFD0C1C2BB6F6006D482E /* MCAddAlbumCell.xib in Resources */,
+				4C0BFD081C2BB626006D482E /* MCAlbumCell.xib in Resources */,
+				4C0BFC351C2B9206006D482E /* Asset.xcassets in Resources */,
+				4C0BFC371C2B9237006D482E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,31 +317,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0BFC201C2B916F006D482E /* ViewController.swift in Sources */,
+				4C0BFC471C2BAE50006D482E /* MCAlbumViewController.swift in Sources */,
+				4C0BFCFD1C2BB44D006D482E /* FMDatabase.m in Sources */,
+				4C0BFCFC1C2BB44D006D482E /* FMDatabaseVariadic.swift in Sources */,
+				4C0BFC451C2B9646006D482E /* MCStringExtension.swift in Sources */,
+				4C0BFCFE1C2BB44D006D482E /* FMDatabaseAdditions.m in Sources */,
+				4C0BFD071C2BB626006D482E /* MCAlbumCell.swift in Sources */,
+				4C0BFC431C2B9472006D482E /* MCDevice.swift in Sources */,
+				4C0BFCFF1C2BB44D006D482E /* FMDatabasePool.m in Sources */,
+				4C0BFD121C2BCFD3006D482E /* MCCameraManager.swift in Sources */,
+				4C0BFC3C1C2B92AE006D482E /* MCViewController.swift in Sources */,
+				4C0BFD0B1C2BB6F6006D482E /* MCAddAlbumCell.swift in Sources */,
+				4C0BFD001C2BB44D006D482E /* FMDatabaseQueue.m in Sources */,
+				4C0BFC411C2B9423006D482E /* MingleChang.swift in Sources */,
+				4C0BFD101C2BC050006D482E /* MCFilePath.swift in Sources */,
+				4C0BFD0E1C2BBA85006D482E /* MCAlbum.swift in Sources */,
+				4C0BFC3E1C2B92C2006D482E /* MCNavigationController.swift in Sources */,
+				4C0BFD011C2BB44D006D482E /* FMResultSet.m in Sources */,
 				4C0BFC1E1C2B916F006D482E /* AppDelegate.swift in Sources */,
+				4C0BFCFB1C2BB44D006D482E /* FMDatabaseAdditionsVariadic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4C0BFC211C2B916F006D482E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C0BFC221C2B916F006D482E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4C0BFC261C2B916F006D482E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C0BFC271C2B916F006D482E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4C0BFC2A1C2B916F006D482E /* Debug */ = {
@@ -247,10 +427,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = camera_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mingle.camera-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = mingle.chang.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "camera_swift/camera_swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -258,10 +442,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = camera_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "mingle.camera-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = mingle.chang.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "camera_swift/camera_swift-Bridging-Header.h";
 			};
 			name = Release;
 		};
