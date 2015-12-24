@@ -11,10 +11,24 @@ import UIKit
 class MCCameraManager: NSObject {
     //MARK:单例
     static let shareInstance=MCCameraManager()
-    private override init(){
+    override init(){
         super.init()
+        self.cameraPath=MCFilePath.directoryPathInDocument("Camera")!
+        self.dbPath=MCFilePath.pathInDirectory(self.cameraPath, item: "camera.sqlite")
+        self.dbQueue=FMDatabaseQueue(path:self.dbPath)
+        self.createTable()
     }
     
-    let cameraPath=MCFilePath.directoryPathInDocument("Camera")!
-    let dbPath=MCFilePath.pathInDirectory(MCCameraManager.shareInstance.cameraPath, item: "camera.sqlite")
+    var cameraPath:String!
+    var dbPath:String!
+    var dbQueue:FMDatabaseQueue!
+}
+
+extension MCCameraManager{
+    func createTable(){
+        func block(db:FMDatabase!,rollback:UnsafeMutablePointer<ObjCBool>){
+            print("Good")
+        }
+        self.dbQueue.inTransaction(block)
+    }
 }

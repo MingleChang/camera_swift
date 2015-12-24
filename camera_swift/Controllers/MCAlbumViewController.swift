@@ -70,6 +70,6 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
         self.automaticallyAdjustsScrollViewInsets=false
     }
     override func configureData() {
-        
+        MCCameraManager.shareInstance.createTable()
     }
 }
