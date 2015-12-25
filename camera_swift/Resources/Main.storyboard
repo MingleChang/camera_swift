@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -49,9 +50,30 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-HD-nK0">
+                                                    <rect key="frame" x="15" y="5" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="p2t-HD-nK0" secondAttribute="height" multiplier="1:1" id="RgX-gA-9GI"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUn-Ud-daz">
+                                                    <rect key="frame" x="35" y="80" width="31" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.38353987068965517" green="0.40748922413793104" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="iUn-Ud-daz" firstAttribute="top" secondItem="p2t-HD-nK0" secondAttribute="bottom" constant="5" id="Lce-No-r7D"/>
+                                            <constraint firstAttribute="trailing" secondItem="p2t-HD-nK0" secondAttribute="trailing" constant="15" id="b4k-vn-d2a"/>
+                                            <constraint firstItem="p2t-HD-nK0" firstAttribute="top" secondItem="0Gb-xE-EnM" secondAttribute="top" constant="5" id="k2Y-Cg-4pO"/>
+                                            <constraint firstItem="p2t-HD-nK0" firstAttribute="leading" secondItem="0Gb-xE-EnM" secondAttribute="leading" constant="15" id="n8o-ZB-jkN"/>
+                                            <constraint firstItem="iUn-Ud-daz" firstAttribute="centerX" secondItem="0Gb-xE-EnM" secondAttribute="centerX" id="zKX-ui-WEW"/>
+                                        </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MCAddAlbumCell" id="nmL-iy-2pZ" customClass="MCAddAlbumCell" customModule="camera_swift" customModuleProvider="target">
                                         <rect key="frame" x="110" y="64" width="100" height="100"/>
@@ -59,9 +81,35 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rd6-zx-GGb">
+                                                    <rect key="frame" x="15" y="5" width="70" height="70"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="NfI-Sn-5up">
+                                                            <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Rd6-zx-GGb" secondAttribute="height" multiplier="1:1" id="5IT-bg-cX0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NfI-Sn-5up" secondAttribute="trailing" constant="10" id="QpP-Pq-g2t"/>
+                                                        <constraint firstAttribute="bottom" secondItem="NfI-Sn-5up" secondAttribute="bottom" constant="10" id="Tgt-mz-24u"/>
+                                                        <constraint firstItem="NfI-Sn-5up" firstAttribute="leading" secondItem="Rd6-zx-GGb" secondAttribute="leading" constant="10" id="Uve-fJ-KAH"/>
+                                                        <constraint firstItem="NfI-Sn-5up" firstAttribute="top" secondItem="Rd6-zx-GGb" secondAttribute="top" constant="10" id="rb5-5M-x7d"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.38353987068965517" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Rd6-zx-GGb" firstAttribute="top" secondItem="nmL-iy-2pZ" secondAttribute="top" constant="5" id="7rl-Qh-fJD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rd6-zx-GGb" secondAttribute="trailing" constant="15" id="OXR-zq-W5c"/>
+                                            <constraint firstItem="Rd6-zx-GGb" firstAttribute="leading" secondItem="nmL-iy-2pZ" secondAttribute="leading" constant="15" id="y86-vq-1ao"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="addBgView" destination="Rd6-zx-GGb" id="nqJ-UQ-1Eo"/>
+                                            <outlet property="addImageView" destination="NfI-Sn-5up" id="YFA-5L-G4q"/>
+                                            <segue destination="m3K-7P-iL6" kind="push" id="mhS-14-hqK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -84,5 +132,27 @@
             </objects>
             <point key="canvasLocation" x="212" y="388"/>
         </scene>
+        <!--Add Album View Controller-->
+        <scene sceneID="R7P-aF-dg4">
+            <objects>
+                <viewController storyboardIdentifier="MCAddAlbumViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m3K-7P-iL6" customClass="MCAddAlbumViewController" customModule="camera_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XhJ-Go-tg3"/>
+                        <viewControllerLayoutGuide type="bottom" id="i2Y-Va-bxe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kzg-UR-e8a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vqe-Ph-c7O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEn-PL-oZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609" y="388"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="add" width="785" height="786"/>
+    </resources>
 </document>

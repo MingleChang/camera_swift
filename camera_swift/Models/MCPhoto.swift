@@ -1,18 +1,19 @@
 //
-//  MCAlbum.swift
+//  MCPhoto.swift
 //  camera_swift
 //
-//  Created by cjw on 15/12/24.
+//  Created by cjw on 15/12/25.
 //  Copyright © 2015年 MingleChang. All rights reserved.
 //
 
 import UIKit
 
-class MCAlbum: NSObject {
+class MCPhoto: NSObject {
     var id:String!
     var title:String!
     var ctime:NSDate!
     var mtime:NSDate!
+    weak var album:MCAlbum!
     
     override init() {
         super.init()
@@ -29,14 +30,7 @@ class MCAlbum: NSObject {
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
     }
-    
-    //MARK:SQL语句
-    class func createTableSQL() -> String {
-        return "CREATE TABLE IF NOT EXISTS album (id text NOT NULL PRIMARY KEY UNIQUE,title text,ctime timestamp,mtime timestamp)"
-    }
-    class func insertAlbumSQL() -> String {
-        return "INSERT INTO album"
-                "(id,title,ctime,mtime)"
-                "VALUES (:id,:title,:ctime,:mtime)"
+    class func createTableSQL() -> String{
+        return "CREATE TABLE IF NOT EXISTS photo (id integer NOT NULL PRIMARY KEY AUTOINCREMENT,albumid text NOT NULL REFERENCES photo (id) ON DELETE CASCADE ON UPDATE CASCADE, ctime timestamp, mtime timestamp)"
     }
 }

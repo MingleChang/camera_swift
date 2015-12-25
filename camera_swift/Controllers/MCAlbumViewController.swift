@@ -28,7 +28,7 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
         return 1
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let lCell=collectionView .dequeueReusableCellWithReuseIdentifier(ALBUM_CELL_ID, forIndexPath: indexPath) as! MCAlbumCell
+        let lCell=collectionView .dequeueReusableCellWithReuseIdentifier(ADD_ALBUM_CELL_ID, forIndexPath: indexPath) as! MCAddAlbumCell
         return lCell
     }
     //MARK:UICollectionView Delegate
@@ -65,11 +65,14 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK:Override
     //MARK:Init Methods
     override func configureView() {
+        super.configureView()
         self.automaticallyAdjustsScrollViewInsets=false
     }
     override func configureData() {
-        MCCameraManager.shareInstance.createTable()
+        super.configureData()
     }
 }

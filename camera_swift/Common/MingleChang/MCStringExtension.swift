@@ -42,7 +42,12 @@ extension String{
             return 0
         }
     }
-    
+    /**
+     将新字符串按路径的方式拼接到原字符串上，即字符串直接添加'/'字符
+     
+     - Parameter str:String 要拼接上的字符串
+     - Returns:N/A
+     */
     func stringByAppendingPathComponent(str:String) -> String{
         return self.stringByAppendingFormat("/%@", str)
     }

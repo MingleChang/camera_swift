@@ -43,14 +43,21 @@ class MCViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+    //MARK:Base Motheds
+    internal func resetNavigationItem(){
+        let lBackBarButtonItem=UIBarButtonItem(image: UIImage(named: "nav_arrow_left"), style: UIBarButtonItemStyle.Done, target: self, action: "backBarButtonItemClick:")
+        self.navigationItem.leftBarButtonItem=lBackBarButtonItem
+    }
+    internal func backBarButtonItemClick(sender:UIBarButtonItem){
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     //MARK:Init Methods
     private func configure(){
+        self.resetNavigationItem()
         self.configureView()
         self.configureData()
     }
     internal func configureView(){
-        
     }
     internal func configureData(){
         

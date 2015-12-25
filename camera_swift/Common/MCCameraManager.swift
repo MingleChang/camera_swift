@@ -16,7 +16,7 @@ class MCCameraManager: NSObject {
         self.cameraPath=MCFilePath.directoryPathInDocument("Camera")!
         self.dbPath=MCFilePath.pathInDirectory(self.cameraPath, item: "camera.sqlite")
         self.dbQueue=FMDatabaseQueue(path:self.dbPath)
-        self.createTable()
+//        self.createTable()
     }
     
     var cameraPath:String!
@@ -27,7 +27,13 @@ class MCCameraManager: NSObject {
 extension MCCameraManager{
     func createTable(){
         func block(db:FMDatabase!,rollback:UnsafeMutablePointer<ObjCBool>){
-            print("Good")
+            do{
+                try db.executeUpdate(MCAlbum.createTableSQL(), values: nil)
+                try db.executeUpdate(MCPhoto.createTableSQL(), values: nil)
+                db.inTransaction()
+            }catch{
+                db.rollback()
+            }
         }
         self.dbQueue.inTransaction(block)
     }
