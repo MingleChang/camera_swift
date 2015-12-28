@@ -9,10 +9,28 @@
 import UIKit
 
 class MCAlbumCell: UICollectionViewCell {
+    @IBOutlet weak var albumImageView: UIImageView!
+    @IBOutlet weak var albumTitleLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.configure()
     }
-
+    
+    //MARK:Init Methods
+    private func configure(){
+        self.configureView()
+        self.configureData()
+    }
+    private func configureView(){
+        
+    }
+    private func configureData(){
+        
+    }
+}
+extension MCAlbumCell{
+    func setupAlbum(album:MCAlbum){
+        self.albumTitleLabel.text=album.title
+    }
 }

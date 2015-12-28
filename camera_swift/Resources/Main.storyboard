@@ -51,7 +51,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-HD-nK0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album_default" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-HD-nK0">
                                                     <rect key="frame" x="15" y="5" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="p2t-HD-nK0" secondAttribute="height" multiplier="1:1" id="RgX-gA-9GI"/>
@@ -66,7 +66,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.38353987068965517" green="0.40748922413793104" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="iUn-Ud-daz" firstAttribute="top" secondItem="p2t-HD-nK0" secondAttribute="bottom" constant="5" id="Lce-No-r7D"/>
                                             <constraint firstAttribute="trailing" secondItem="p2t-HD-nK0" secondAttribute="trailing" constant="15" id="b4k-vn-d2a"/>
@@ -74,6 +73,10 @@
                                             <constraint firstItem="p2t-HD-nK0" firstAttribute="leading" secondItem="0Gb-xE-EnM" secondAttribute="leading" constant="15" id="n8o-ZB-jkN"/>
                                             <constraint firstItem="iUn-Ud-daz" firstAttribute="centerX" secondItem="0Gb-xE-EnM" secondAttribute="centerX" id="zKX-ui-WEW"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="albumImageView" destination="p2t-HD-nK0" id="Yas-q4-QYZ"/>
+                                            <outlet property="albumTitleLabel" destination="iUn-Ud-daz" id="rQF-aR-Uj4"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MCAddAlbumCell" id="nmL-iy-2pZ" customClass="MCAddAlbumCell" customModule="camera_swift" customModuleProvider="target">
                                         <rect key="frame" x="110" y="64" width="100" height="100"/>
@@ -82,32 +85,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rd6-zx-GGb">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-Vh-Z1Y">
                                                     <rect key="frame" x="15" y="5" width="70" height="70"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="NfI-Sn-5up">
-                                                            <rect key="frame" x="10" y="10" width="50" height="50"/>
-                                                        </imageView>
-                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Rd6-zx-GGb" secondAttribute="height" multiplier="1:1" id="5IT-bg-cX0"/>
-                                                        <constraint firstAttribute="trailing" secondItem="NfI-Sn-5up" secondAttribute="trailing" constant="10" id="QpP-Pq-g2t"/>
-                                                        <constraint firstAttribute="bottom" secondItem="NfI-Sn-5up" secondAttribute="bottom" constant="10" id="Tgt-mz-24u"/>
-                                                        <constraint firstItem="NfI-Sn-5up" firstAttribute="leading" secondItem="Rd6-zx-GGb" secondAttribute="leading" constant="10" id="Uve-fJ-KAH"/>
-                                                        <constraint firstItem="NfI-Sn-5up" firstAttribute="top" secondItem="Rd6-zx-GGb" secondAttribute="top" constant="10" id="rb5-5M-x7d"/>
+                                                        <constraint firstAttribute="width" secondItem="UzB-Vh-Z1Y" secondAttribute="height" multiplier="1:1" id="zir-aQ-MqZ"/>
                                                     </constraints>
-                                                </view>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Rd6-zx-GGb" firstAttribute="top" secondItem="nmL-iy-2pZ" secondAttribute="top" constant="5" id="7rl-Qh-fJD"/>
-                                            <constraint firstAttribute="trailing" secondItem="Rd6-zx-GGb" secondAttribute="trailing" constant="15" id="OXR-zq-W5c"/>
-                                            <constraint firstItem="Rd6-zx-GGb" firstAttribute="leading" secondItem="nmL-iy-2pZ" secondAttribute="leading" constant="15" id="y86-vq-1ao"/>
+                                            <constraint firstAttribute="trailing" secondItem="UzB-Vh-Z1Y" secondAttribute="trailing" constant="15" id="dYN-r1-cD9"/>
+                                            <constraint firstItem="UzB-Vh-Z1Y" firstAttribute="top" secondItem="nmL-iy-2pZ" secondAttribute="top" constant="5" id="hPh-tG-GCa"/>
+                                            <constraint firstItem="UzB-Vh-Z1Y" firstAttribute="leading" secondItem="nmL-iy-2pZ" secondAttribute="leading" constant="15" id="trU-OB-Cdv"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="addBgView" destination="Rd6-zx-GGb" id="nqJ-UQ-1Eo"/>
-                                            <outlet property="addImageView" destination="NfI-Sn-5up" id="YFA-5L-G4q"/>
                                             <segue destination="m3K-7P-iL6" kind="push" id="mhS-14-hqK"/>
                                         </connections>
                                     </collectionViewCell>
@@ -143,16 +135,50 @@
                     <view key="view" contentMode="scaleToFill" id="kzg-UR-e8a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album_default" translatesAutoresizingMaskIntoConstraints="NO" id="Xap-qh-9sT">
+                                <rect key="frame" x="110" y="74" width="100" height="100"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Sv2-lY-7vX"/>
+                                    <constraint firstAttribute="width" constant="100" id="jlo-km-4Ro"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Hpt-6d-ANN" appends="YES" id="RKv-Wd-jWF"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1CW-Py-eL3">
+                                <rect key="frame" x="20" y="189" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ct7-1y-yzH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1CW-Py-eL3" firstAttribute="leading" secondItem="kzg-UR-e8a" secondAttribute="leading" constant="20" id="8rS-9V-bM8"/>
+                            <constraint firstItem="Xap-qh-9sT" firstAttribute="top" secondItem="XhJ-Go-tg3" secondAttribute="bottom" constant="10" id="RjD-zl-61I"/>
+                            <constraint firstItem="1CW-Py-eL3" firstAttribute="top" secondItem="Xap-qh-9sT" secondAttribute="bottom" constant="15" id="hzB-nd-sPy"/>
+                            <constraint firstAttribute="trailing" secondItem="1CW-Py-eL3" secondAttribute="trailing" constant="20" id="r9w-jm-zh1"/>
+                            <constraint firstItem="Xap-qh-9sT" firstAttribute="centerX" secondItem="kzg-UR-e8a" secondAttribute="centerX" id="rwo-G9-XaU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vqe-Ph-c7O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEn-PL-oZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Hpt-6d-ANN">
+                    <connections>
+                        <action selector="imageViewTap:" destination="m3K-7P-iL6" id="2ZP-JT-w0d"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="609" y="388"/>
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="785" height="786"/>
+        <image name="add" width="60" height="60"/>
+        <image name="album_default" width="120" height="120"/>
     </resources>
 </document>

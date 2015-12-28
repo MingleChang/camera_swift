@@ -19,17 +19,49 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    //MARK:Delegate
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    //MARK:Override
+    //MARK:Init Methods
+    override func configureView() {
+        super.configureView()
+        self.automaticallyAdjustsScrollViewInsets=false
+    }
+    override func configureData() {
+        super.configureData()
+    }
+    override func resetNavigationItem() {
+        
+    }
+}
+
+//MARK:Delegate
+extension MCAlbumViewController{
     //MARK:UICollectionView DataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return MCCameraManager.shareInstance.albums.count+1
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let lCell=collectionView .dequeueReusableCellWithReuseIdentifier(ADD_ALBUM_CELL_ID, forIndexPath: indexPath) as! MCAddAlbumCell
-        return lCell
+        let row=indexPath.row
+        if (row == MCCameraManager.shareInstance.albums.count){
+            let lCell=collectionView .dequeueReusableCellWithReuseIdentifier(ADD_ALBUM_CELL_ID, forIndexPath: indexPath) as! MCAddAlbumCell
+            return lCell
+        }else{
+            let lAlbum=MCCameraManager.shareInstance.albums[row]
+            let lCell=collectionView.dequeueReusableCellWithReuseIdentifier(ALBUM_CELL_ID, forIndexPath: indexPath) as! MCAlbumCell
+            lCell.setupAlbum(lAlbum)
+            return lCell
+        }
     }
     //MARK:UICollectionView Delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -54,25 +86,5 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize{
         return CGSizeZero
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    //MARK:Override
-    //MARK:Init Methods
-    override func configureView() {
-        super.configureView()
-        self.automaticallyAdjustsScrollViewInsets=false
-    }
-    override func configureData() {
-        super.configureData()
     }
 }

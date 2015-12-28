@@ -31,5 +31,28 @@ class MCAddAlbumViewController: MCViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK:Override
+    //MARK:Init Methods
+    override func configureView() {
+        super.configureView()
+    }
+    override func configureData() {
+        super.configureData()
+    }
+    override func resetNavigationItem() {
+        super.resetNavigationItem()
+        let lSaveBarButtonItem=UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.Done, target: self, action: "saveBarButtonItemClick:")
+        self.navigationItem.rightBarButtonItem=lSaveBarButtonItem
+    }
 
+}
+
+extension MCAddAlbumViewController{
+    func saveBarButtonItemClick(sender:UIBarButtonItem){
+        print("保存")
+    }
+    @IBAction func imageViewTap(sender: UITapGestureRecognizer) {
+        print("点击")
+    }
 }

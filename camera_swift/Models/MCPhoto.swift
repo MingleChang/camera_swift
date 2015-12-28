@@ -13,7 +13,6 @@ class MCPhoto: NSObject {
     var title:String!
     var ctime:NSDate!
     var mtime:NSDate!
-    weak var album:MCAlbum!
     
     override init() {
         super.init()
@@ -30,6 +29,10 @@ class MCPhoto: NSObject {
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
     }
+}
+
+//MARK:SQL语句
+extension MCPhoto{
     class func createTableSQL() -> String{
         return "CREATE TABLE IF NOT EXISTS photo (id integer NOT NULL PRIMARY KEY AUTOINCREMENT,albumid text NOT NULL REFERENCES photo (id) ON DELETE CASCADE ON UPDATE CASCADE, ctime timestamp, mtime timestamp)"
     }
