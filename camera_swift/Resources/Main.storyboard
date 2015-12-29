@@ -51,7 +51,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album_default" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-HD-nK0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album_default" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-HD-nK0">
                                                     <rect key="frame" x="15" y="5" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="p2t-HD-nK0" secondAttribute="height" multiplier="1:1" id="RgX-gA-9GI"/>
@@ -166,6 +166,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vqe-Ph-c7O"/>
+                    <connections>
+                        <outlet property="albumImageView" destination="Xap-qh-9sT" id="rVO-dA-R9P"/>
+                        <outlet property="albumTitleText" destination="1CW-Py-eL3" id="sdf-bM-ANa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEn-PL-oZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Hpt-6d-ANN">

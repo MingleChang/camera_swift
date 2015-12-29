@@ -32,5 +32,6 @@ class MCAlbumCell: UICollectionViewCell {
 extension MCAlbumCell{
     func setupAlbum(album:MCAlbum){
         self.albumTitleLabel.text=album.title
+        self.albumImageView.image=album.image
     }
 }

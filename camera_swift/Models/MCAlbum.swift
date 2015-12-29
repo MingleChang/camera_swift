@@ -14,9 +14,28 @@ class MCAlbum: NSObject {
     var ctime:NSDate!
     var mtime:NSDate!
     
+    var isSave:Bool!
+    
     var directoryPath: String {
         get {
             return MCFilePath.directoryPathInDirectory(MCCameraManager.shareInstance.cameraPath, item: self.id)!
+        }
+    }
+    
+    var imagePath:String {
+        get {
+            return MCFilePath.pathInDirectory(MCCameraManager.shareInstance.cameraPath, item: self.id+".mc")
+        }
+    }
+    
+    var image:UIImage {
+        get{
+            let image=UIImage(contentsOfFile: self.imagePath)
+            if let validImage = image{
+                return validImage
+            }else{
+                return UIImage(named: "album_default")!
+            }
         }
     }
     
@@ -26,10 +45,14 @@ class MCAlbum: NSObject {
         self.title=""
         self.ctime=NSDate()
         self.mtime=NSDate()
+        
+        self.isSave=false
     }
     init(Dictionary dic:[String : AnyObject]) {
         super.init()
         self.setValuesForKeysWithDictionary(dic)
+        
+        self.isSave=true
     }
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
@@ -87,13 +110,32 @@ extension MCAlbum{
         return lArray
     }
     
-    func save() -> Bool {
-        let sucess=MCCameraManager.shareInstance.insertAlbum(self)
-        return sucess
+    func save(withImage image:UIImage?) -> Bool{
+        if let validImage = image{
+            let imageData=UIImageJPEGRepresentation(validImage, 0.9)
+            let sucess=imageData!.writeToFile(self.imagePath, atomically: true)
+            if(sucess==true){
+                return self.save()
+            }
+        }else{
+            return self.save()
+        }
+        
+        return false
     }
     
-    func update() -> Bool {
-        let sucess=MCCameraManager.shareInstance.updateAlbum(self)
-        return sucess
+    func save() -> Bool {
+        if(self.isSave==false){
+            let sucess=MCCameraManager.shareInstance.insertAlbum(self)
+            if(sucess==true){
+                self.isSave=true
+                return true
+            }else{
+                return false
+            }
+        }else{
+            let sucess=MCCameraManager.shareInstance.updateAlbum(self)
+            return sucess
+        }
     }
 }
