@@ -12,6 +12,8 @@ class MCAddAlbumViewController: MCViewController,UIImagePickerControllerDelegate
     @IBOutlet weak var albumImageView: UIImageView!
     @IBOutlet weak var albumTitleText: UITextField!
     
+    var isSelectImage=false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -47,19 +49,19 @@ class MCAddAlbumViewController: MCViewController,UIImagePickerControllerDelegate
 
 }
 
+//MARK:Events Response
 extension MCAddAlbumViewController{
     func saveBarButtonItemClick(sender:UIBarButtonItem){
         self.saveAlbum()
-        print("保存")
     }
     @IBAction func imageViewTap(sender: UITapGestureRecognizer) {
         self.tapImageView()
-        print("点击")
     }
 }
 
 extension MCAddAlbumViewController{
     func tapImageView(){
+        self.albumTitleText.resignFirstResponder()
         func albumActionBlock(action:UIAlertAction){
             let lViewController=UIImagePickerController()
             lViewController.delegate=self
@@ -87,16 +89,37 @@ extension MCAddAlbumViewController{
     }
     
     func saveAlbum(){
-        let lAlbum=MCAlbum()
-        lAlbum.title="adsfsadfdfsa"
-        lAlbum.save(withImage: self.albumImageView.image)
+        self.albumTitleText.resignFirstResponder()
+        if let title=self.checkTitle(){
+            let lAlbum=MCAlbum()
+            lAlbum.title=title
+            lAlbum.save(withImage: (self.isSelectImage ? self.albumImageView.image:nil))
+            MCCameraManager.shareInstance.albums.append(lAlbum)
+            self.navigationController!.popViewControllerAnimated(true)
+        }else{
+            
+        }
+    }
+    
+    func checkTitle() -> String?{
+        if let title=self.albumTitleText.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()){
+            if(title.characters.count==0){
+                return nil
+            }
+            return title
+        }else{
+            return nil
+        }
     }
 }
 
+//MARK:Delegate
 extension MCAddAlbumViewController{
+    //MARK:UIImagePickerController Delegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let lImage=info["UIImagePickerControllerEditedImage"] as! UIImage
         self.albumImageView.image=lImage
+        self.isSelectImage=true
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

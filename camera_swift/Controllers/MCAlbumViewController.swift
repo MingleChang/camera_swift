@@ -13,10 +13,14 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
     let ALBUM_CELL_ID="MCAlbumCell"
     let ADD_ALBUM_CELL_ID="MCAddAlbumCell"
 
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
