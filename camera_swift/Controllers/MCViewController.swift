@@ -18,6 +18,7 @@ class MCViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.resetNavigationBar()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -44,6 +45,9 @@ class MCViewController: UIViewController {
     }
     */
     //MARK:Base Motheds
+    internal func resetNavigationBar(){
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     internal func resetNavigationItem(){
         let lBackBarButtonItem=UIBarButtonItem(image: UIImage(named: "nav_arrow_left"), style: UIBarButtonItemStyle.Done, target: self, action: "backBarButtonItemClick:")
         self.navigationItem.leftBarButtonItem=lBackBarButtonItem
