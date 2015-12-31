@@ -1,40 +1,44 @@
 //
-//  MCAlbumViewController.swift
+//  MCAlbumDetailViewController.swift
 //  camera_swift
 //
-//  Created by cjw on 15/12/24.
+//  Created by cjw on 15/12/31.
 //  Copyright © 2015年 MingleChang. All rights reserved.
 //
 
 import UIKit
 
-class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class MCAlbumDetailViewController: MCViewController {
     //MARK:cell的id值
-    let ALBUM_CELL_ID="MCAlbumCell"
-    let ADD_ALBUM_CELL_ID="MCAddAlbumCell"
+    let PHOTO_CELL_ID="MCPhotoCell"
+    let ADD_PHOTO_CELL_ID="MCAddPhotoCell"
     
-    let ALBUM_DETAIL_SEGUE_ID="MCAlbumDetailViewController"
-
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var album:MCAlbum!
+    var photos:[MCPhoto]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.collectionView.reloadData()
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
+
+    /*
     // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == ALBUM_DETAIL_SEGUE_ID){
-            let lViewController=segue.destinationViewController as! MCAlbumDetailViewController
-            lViewController.album=sender as! MCAlbum
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
+
     //MARK:Override
     //MARK:Init Methods
     override func configureView() {
@@ -43,27 +47,29 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
     }
     override func configureData() {
         super.configureData()
+        self.photos=MCCameraManager.shareInstance.selectPhoto(inAlbumId: self.album.id)
     }
     override func resetNavigationItem() {
-        
+        super.resetNavigationItem()
     }
 }
 
+
 //MARK:Delegate
-extension MCAlbumViewController{
+extension MCAlbumDetailViewController{
     //MARK:UICollectionView DataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MCCameraManager.shareInstance.albums.count+1
+        return self.photos.count+1
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let row=indexPath.row
-        if (row == MCCameraManager.shareInstance.albums.count){
-            let lCell=collectionView .dequeueReusableCellWithReuseIdentifier(ADD_ALBUM_CELL_ID, forIndexPath: indexPath) as! MCAddAlbumCell
+        if (row == self.photos.count){
+            let lCell=collectionView .dequeueReusableCellWithReuseIdentifier(ADD_PHOTO_CELL_ID, forIndexPath: indexPath) as! MCAddPhotoCell
             return lCell
         }else{
-            let lAlbum=MCCameraManager.shareInstance.albums[row]
-            let lCell=collectionView.dequeueReusableCellWithReuseIdentifier(ALBUM_CELL_ID, forIndexPath: indexPath) as! MCAlbumCell
-            lCell.setupAlbum(lAlbum)
+            let lPhoto=self.photos[row]
+            let lCell=collectionView.dequeueReusableCellWithReuseIdentifier(PHOTO_CELL_ID, forIndexPath: indexPath) as! MCPhotoCell
+            lCell.setupPhoto(lPhoto)
             return lCell
         }
     }
@@ -74,8 +80,7 @@ extension MCAlbumViewController{
         if (row == MCCameraManager.shareInstance.albums.count){
             
         }else{
-            let lAlbum=MCCameraManager.shareInstance.albums[row]
-            self.performSegueWithIdentifier(ALBUM_DETAIL_SEGUE_ID, sender: lAlbum)
+            
         }
     }
     //MARK:UICollectionViewFlowLayout Delegate

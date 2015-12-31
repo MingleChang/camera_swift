@@ -28,6 +28,8 @@ class MCCameraManager: NSObject {
     var albums:[MCAlbum]!
 }
 
+//MARK:SQL
+//MARK:创建表
 extension MCCameraManager{
     func createTable(){
         func block(db:FMDatabase!,rollback:UnsafeMutablePointer<ObjCBool>){
@@ -42,6 +44,8 @@ extension MCCameraManager{
         self.dbQueue.inTransaction(block)
     }
 }
+
+//MARK:Album的相关SQL操作
 extension MCCameraManager{
     func selectAlbum() -> [MCAlbum]{
         var lResults:[MCAlbum]=[]
@@ -71,5 +75,22 @@ extension MCCameraManager{
         }
         self.dbQueue.inDatabase(block)
         return success
+    }
+}
+
+//MARK:Photo的相关SQL操作
+extension MCCameraManager{
+    func selectPhoto(inAlbumId albumId:String) -> [MCPhoto]{
+        var lResults:[MCPhoto]=[]
+        func block(db:FMDatabase!){
+            do{
+                let lResultSet=try db.executeQuery(MCPhoto.selectPhotoSQL(withAlbumId: albumId), values: nil)
+                lResults=MCPhoto.photoArray(byResultSet: lResultSet)
+            }catch{
+                
+            }
+        }
+        self.dbQueue.inDatabase(block)
+        return lResults
     }
 }

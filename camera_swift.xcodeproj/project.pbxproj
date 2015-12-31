@@ -32,6 +32,11 @@
 		4C0BFD0E1C2BBA85006D482E /* MCAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD0D1C2BBA85006D482E /* MCAlbum.swift */; };
 		4C0BFD101C2BC050006D482E /* MCFilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD0F1C2BC050006D482E /* MCFilePath.swift */; };
 		4C0BFD121C2BCFD3006D482E /* MCCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0BFD111C2BCFD3006D482E /* MCCameraManager.swift */; };
+		4C5A63C21C3506C8003608FB /* MCAlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A63C11C3506C8003608FB /* MCAlbumDetailViewController.swift */; };
+		4C5A63C51C3526E3003608FB /* MCPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A63C31C3526E3003608FB /* MCPhotoCell.swift */; };
+		4C5A63C61C3526E3003608FB /* MCPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5A63C41C3526E3003608FB /* MCPhotoCell.xib */; };
+		4C5A63C91C352721003608FB /* MCAddPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A63C71C352721003608FB /* MCAddPhotoCell.swift */; };
+		4C5A63CA1C352721003608FB /* MCAddPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5A63C81C352721003608FB /* MCAddPhotoCell.xib */; };
 		4C7CFAD71C2D4165009BECD4 /* MCAddAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */; };
 		4C85D7351C2CE794006C923E /* MCPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85D7341C2CE794006C923E /* MCPhoto.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +76,11 @@
 		4C0BFD0D1C2BBA85006D482E /* MCAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAlbum.swift; sourceTree = "<group>"; };
 		4C0BFD0F1C2BC050006D482E /* MCFilePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCFilePath.swift; sourceTree = "<group>"; };
 		4C0BFD111C2BCFD3006D482E /* MCCameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCCameraManager.swift; sourceTree = "<group>"; };
+		4C5A63C11C3506C8003608FB /* MCAlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAlbumDetailViewController.swift; sourceTree = "<group>"; };
+		4C5A63C31C3526E3003608FB /* MCPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCPhotoCell.swift; sourceTree = "<group>"; };
+		4C5A63C41C3526E3003608FB /* MCPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCPhotoCell.xib; sourceTree = "<group>"; };
+		4C5A63C71C352721003608FB /* MCAddPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAddPhotoCell.swift; sourceTree = "<group>"; };
+		4C5A63C81C352721003608FB /* MCAddPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCAddPhotoCell.xib; sourceTree = "<group>"; };
 		4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAddAlbumViewController.swift; sourceTree = "<group>"; };
 		4C85D7341C2CE794006C923E /* MCPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +145,7 @@
 				4C0BFC3A1C2B92A1006D482E /* Base */,
 				4C0BFC461C2BAE50006D482E /* MCAlbumViewController.swift */,
 				4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */,
+				4C5A63C11C3506C8003608FB /* MCAlbumDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +176,10 @@
 				4C0BFD061C2BB626006D482E /* MCAlbumCell.xib */,
 				4C0BFD091C2BB6F6006D482E /* MCAddAlbumCell.swift */,
 				4C0BFD0A1C2BB6F6006D482E /* MCAddAlbumCell.xib */,
+				4C5A63C31C3526E3003608FB /* MCPhotoCell.swift */,
+				4C5A63C41C3526E3003608FB /* MCPhotoCell.xib */,
+				4C5A63C71C352721003608FB /* MCAddPhotoCell.swift */,
+				4C5A63C81C352721003608FB /* MCAddPhotoCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,7 +325,9 @@
 			files = (
 				4C0BFC391C2B9243006D482E /* Main.storyboard in Resources */,
 				4C0BFD0C1C2BB6F6006D482E /* MCAddAlbumCell.xib in Resources */,
+				4C5A63C61C3526E3003608FB /* MCPhotoCell.xib in Resources */,
 				4C0BFD081C2BB626006D482E /* MCAlbumCell.xib in Resources */,
+				4C5A63CA1C352721003608FB /* MCAddPhotoCell.xib in Resources */,
 				4C0BFC351C2B9206006D482E /* Asset.xcassets in Resources */,
 				4C0BFC371C2B9237006D482E /* LaunchScreen.storyboard in Resources */,
 			);
@@ -340,6 +357,9 @@
 				4C0BFC411C2B9423006D482E /* MingleChang.swift in Sources */,
 				4C0BFD101C2BC050006D482E /* MCFilePath.swift in Sources */,
 				4C0BFD0E1C2BBA85006D482E /* MCAlbum.swift in Sources */,
+				4C5A63C21C3506C8003608FB /* MCAlbumDetailViewController.swift in Sources */,
+				4C5A63C91C352721003608FB /* MCAddPhotoCell.swift in Sources */,
+				4C5A63C51C3526E3003608FB /* MCPhotoCell.swift in Sources */,
 				4C0BFC3E1C2B92C2006D482E /* MCNavigationController.swift in Sources */,
 				4C0BFD011C2BB44D006D482E /* FMResultSet.m in Sources */,
 				4C0BFC1E1C2B916F006D482E /* AppDelegate.swift in Sources */,

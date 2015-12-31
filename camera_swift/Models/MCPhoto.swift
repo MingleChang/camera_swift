@@ -27,13 +27,61 @@ class MCPhoto: NSObject {
     }
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
-        
+        if(key == "create_time"){
+            self.ctime=NSDate(timeIntervalSince1970: value as! NSTimeInterval)
+        }
+        if(key == "modify_time"){
+            self.mtime=NSDate(timeIntervalSince1970: value as! NSTimeInterval)
+        }
+    }
+    
+    override func valueForUndefinedKey(key: String) -> AnyObject? {
+        if(key == "create_time"){
+            return self.ctime.timeIntervalSince1970
+        }
+        if(key == "modify_time"){
+            return self.mtime.timeIntervalSince1970
+        }
+        return nil
+    }
+}
+
+//MAKR:
+extension MCPhoto{
+    func toDBDictionary() -> [String : AnyObject]{
+        return self.dictionaryWithValuesForKeys(MCAlbum.getAllSQLParam())
+    }
+    class func getAllSQLParam() -> [String] {
+        return ["id","albumid","create_time","modify_time"]
     }
 }
 
 //MARK:SQL语句
 extension MCPhoto{
     class func createTableSQL() -> String{
-        return "CREATE TABLE IF NOT EXISTS photo (id integer NOT NULL PRIMARY KEY AUTOINCREMENT,albumid text NOT NULL REFERENCES photo (id) ON DELETE CASCADE ON UPDATE CASCADE, ctime timestamp, mtime timestamp)"
+        return "CREATE TABLE IF NOT EXISTS photo (id integer NOT NULL PRIMARY KEY AUTOINCREMENT,albumid text NOT NULL REFERENCES photo (id) ON DELETE CASCADE ON UPDATE CASCADE, create_time timestamp, modify_time timestamp)"
+    }
+    
+    class func insertPhotoSQL() -> String {
+        return "INSERT INTO photo(id,albumid,create_time,modify_time) VALUES (:id,:albumid,:create_time,:modify_time)"
+    }
+    class func updatePhotoSQL() -> String {
+        return "UPDATE photo SET id=:id,albumid=:albumid,create_time=:create_time,modify_time=:modify_time WHERE id=:id"
+    }
+    class func selectPhotoSQL(withAlbumId albumId:String) -> String {
+        return "SELECT * FROM photo WHERE albumid=" + "'" + albumId + "'";
+    }
+}
+
+//MARK:
+extension MCPhoto{
+    class func photoArray(byResultSet resultSet:FMResultSet) -> [MCPhoto]{
+        var lArray:[MCPhoto]=[]
+        while resultSet.next(){
+            let dic=resultSet.resultDictionary() as! [String : AnyObject]
+            let photo=MCPhoto(Dictionary: dic)
+            lArray.append(photo)
+        }
+        return lArray
     }
 }

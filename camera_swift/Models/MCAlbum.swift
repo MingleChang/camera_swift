@@ -92,13 +92,14 @@ extension MCAlbum{
         return "INSERT INTO album(id,title,create_time,modify_time) VALUES (:id,:title,:create_time,:modify_time)"
     }
     class func updateAlbumSQL() -> String {
-        return "UPDATE Notepad SET id=:id,title=:title,create_time=:create_time,modify_time=:modify_time WHERE id=:id"
+        return "UPDATE album SET id=:id,title=:title,create_time=:create_time,modify_time=:modify_time WHERE id=:id"
     }
     class func selectAlbumSQL() -> String {
         return "SELECT * FROM album";
     }
 }
 
+//MARK:
 extension MCAlbum{
     class func albumArray(byResultSet resultSet:FMResultSet) -> [MCAlbum]{
         var lArray:[MCAlbum]=[]
