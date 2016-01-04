@@ -68,7 +68,7 @@ extension MCAlbumDetailViewController{
         }
         MCImagesToVideo.writeImageAsMovie(imageArray, path: self.album.videoPath, size: CGSizeMake(640, 640), fps: 1, shouldAnimateTransitions: false) { (success:Bool) -> Void in
             if success{
-              MCLog("Complete")
+                MCLog("Complete")
             }else{
                 MCLog("Failed")
             }

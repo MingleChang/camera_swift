@@ -9,8 +9,6 @@
 import UIKit
 import AVFoundation
 
-
-
 class MCImagesToVideo: NSObject {
     static let DefaultFrameSize=CGSizeMake(480, 320)
     static let DefaultFrameRate=1
