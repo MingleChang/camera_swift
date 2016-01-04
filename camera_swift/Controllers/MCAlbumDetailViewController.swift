@@ -66,7 +66,7 @@ extension MCAlbumDetailViewController{
             let image=photo.image
             imageArray.append(image)
         }
-        MCImagesToVideo.writeImageAsMovie(imageArray, path: self.album.videoPath, size: CGSizeMake(640, 640), fps: 1, shouldAnimateTransitions: false) { (success:Bool) -> Void in
+        MCImagesToVideo.writeImageAsMovie(imageArray, path: self.album.videoPath, size: CGSizeMake(640, 640), fps: 2, shouldAnimateTransitions: true) { (success:Bool) -> Void in
             if success{
                 MCLog("Complete")
             }else{
