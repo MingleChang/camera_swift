@@ -8,6 +8,12 @@
 
 import Foundation
 
+let CAMERA_PATH=MCFilePath.directoryPathInDocument("Camera")!
+let DB_PATH=MCFilePath.pathInDirectory(CAMERA_PATH, item: "camera.sqlite")
+let VIDEO_PATH=MCFilePath.directoryPathInDirectory(CAMERA_PATH, item: "Video")!
+
+typealias successBlock=(Bool)->Void
+
 /**
  打印消息，如果是Debug模式则打印消息，否则不执行任何操作
  

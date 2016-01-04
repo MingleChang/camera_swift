@@ -18,13 +18,13 @@ class MCAlbum: NSObject {
     
     var directoryPath: String {
         get {
-            return MCFilePath.directoryPathInDirectory(MCCameraManager.shareInstance.cameraPath, item: self.id)!
+            return MCFilePath.directoryPathInDirectory(CAMERA_PATH, item: self.id)!
         }
     }
     
     var imagePath:String {
         get {
-            return MCFilePath.pathInDirectory(MCCameraManager.shareInstance.cameraPath, item: self.id+".mc")
+            return MCFilePath.pathInDirectory(CAMERA_PATH, item: self.id+".mc")
         }
     }
     
@@ -36,6 +36,12 @@ class MCAlbum: NSObject {
             }else{
                 return UIImage(named: "album_default")!
             }
+        }
+    }
+    
+    var videoPath:String {
+        get {
+            return MCFilePath.pathInDirectory(VIDEO_PATH, item: self.id+".mp4")
         }
     }
     

@@ -9,6 +9,7 @@
 import UIKit
 
 class MCPhotoCell: UICollectionViewCell {
+    @IBOutlet weak var photoImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +32,6 @@ class MCPhotoCell: UICollectionViewCell {
 
 extension MCPhotoCell{
     func setupPhoto(photo:MCPhoto){
-        
+        self.photoImageView.image=photo.image
     }
 }

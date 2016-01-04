@@ -10,14 +10,44 @@ import UIKit
 
 class MCPhoto: NSObject {
     var id:String!
-    var title:String!
+    var albumid:String!
     var ctime:NSDate!
     var mtime:NSDate!
+    
+    var directoryPath: String {
+        get {
+            return MCFilePath.directoryPathInDirectory(CAMERA_PATH, item: self.albumid)!
+        }
+    }
+    
+    var imagePath:String {
+        get {
+            return MCFilePath.pathInDirectory(self.directoryPath, item: self.id+".mc")
+        }
+    }
+    
+    var image:UIImage {
+        get{
+            let image=UIImage(contentsOfFile: self.imagePath)
+            if let validImage = image{
+                return validImage
+            }else{
+                return UIImage(named: "album_default")!
+            }
+        }
+    }
     
     override init() {
         super.init()
         self.id=NSUUID().UUIDString
-        self.title=""
+        self.albumid=""
+        self.ctime=NSDate()
+        self.mtime=NSDate()
+    }
+    init(AlbumId albumId:String) {
+        super.init()
+        self.id=NSUUID().UUIDString
+        self.albumid=albumId
         self.ctime=NSDate()
         self.mtime=NSDate()
     }
@@ -49,7 +79,7 @@ class MCPhoto: NSObject {
 //MAKR:
 extension MCPhoto{
     func toDBDictionary() -> [String : AnyObject]{
-        return self.dictionaryWithValuesForKeys(MCAlbum.getAllSQLParam())
+        return self.dictionaryWithValuesForKeys(MCPhoto.getAllSQLParam())
     }
     class func getAllSQLParam() -> [String] {
         return ["id","albumid","create_time","modify_time"]
@@ -59,7 +89,7 @@ extension MCPhoto{
 //MARK:SQL语句
 extension MCPhoto{
     class func createTableSQL() -> String{
-        return "CREATE TABLE IF NOT EXISTS photo (id integer NOT NULL PRIMARY KEY AUTOINCREMENT,albumid text NOT NULL REFERENCES photo (id) ON DELETE CASCADE ON UPDATE CASCADE, create_time timestamp, modify_time timestamp)"
+        return "CREATE TABLE IF NOT EXISTS photo (id text NOT NULL PRIMARY KEY UNIQUE,albumid text NOT NULL REFERENCES photo (id) ON DELETE CASCADE ON UPDATE CASCADE, create_time timestamp, modify_time timestamp)"
     }
     
     class func insertPhotoSQL() -> String {
@@ -83,5 +113,23 @@ extension MCPhoto{
             lArray.append(photo)
         }
         return lArray
+    }
+    
+    func save(withImage image:UIImage!) -> Bool{
+        let imageData=UIImageJPEGRepresentation(image, 0.9)
+        let sucess=imageData!.writeToFile(self.imagePath, atomically: true)
+        if(sucess==true){
+            return self.save()
+        }
+        return false
+    }
+    
+    func save() -> Bool {
+        let sucess=MCCameraManager.shareInstance.insertPhoto(self)
+        if(sucess==true){
+            return true
+        }else{
+            return false
+        }
     }
 }

@@ -85,7 +85,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-Vh-Z1Y">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album_add" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-Vh-Z1Y">
                                                     <rect key="frame" x="15" y="5" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="UzB-Vh-Z1Y" secondAttribute="height" multiplier="1:1" id="zir-aQ-MqZ"/>
@@ -213,7 +213,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="NPs-zh-SWk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album_default" translatesAutoresizingMaskIntoConstraints="NO" id="NPs-zh-SWk">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                             </subviews>
@@ -225,6 +225,9 @@
                                             <constraint firstAttribute="bottom" secondItem="NPs-zh-SWk" secondAttribute="bottom" id="XVR-Tf-zmg"/>
                                             <constraint firstItem="NPs-zh-SWk" firstAttribute="top" secondItem="bB7-rX-bBq" secondAttribute="top" id="e6O-d6-8vh"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="NPs-zh-SWk" id="ghf-o3-ijK"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MCAddPhotoCell" id="ede-B7-PhP" customClass="MCAddPhotoCell" customModule="camera_swift" customModuleProvider="target">
                                         <rect key="frame" x="110" y="64" width="100" height="100"/>
@@ -233,17 +236,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="5ZF-Gv-Pnq">
-                                                    <rect key="frame" x="15" y="15" width="70" height="70"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_camera" translatesAutoresizingMaskIntoConstraints="NO" id="5ZF-Gv-Pnq">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="5ZF-Gv-Pnq" firstAttribute="leading" secondItem="ede-B7-PhP" secondAttribute="leading" constant="15" id="7rS-h1-X5I"/>
-                                            <constraint firstItem="5ZF-Gv-Pnq" firstAttribute="top" secondItem="ede-B7-PhP" secondAttribute="top" constant="15" id="Bm9-aZ-vii"/>
-                                            <constraint firstAttribute="bottom" secondItem="5ZF-Gv-Pnq" secondAttribute="bottom" constant="15" id="get-NX-xCj"/>
-                                            <constraint firstAttribute="trailing" secondItem="5ZF-Gv-Pnq" secondAttribute="trailing" constant="15" id="ue2-pc-d7b"/>
+                                            <constraint firstItem="5ZF-Gv-Pnq" firstAttribute="centerY" secondItem="ede-B7-PhP" secondAttribute="centerY" id="Fl7-Ho-XqQ"/>
+                                            <constraint firstItem="5ZF-Gv-Pnq" firstAttribute="centerX" secondItem="ede-B7-PhP" secondAttribute="centerX" id="HmN-9R-3ht"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
@@ -262,6 +263,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fa3-HZ-qoW"/>
+                    <connections>
+                        <outlet property="collectionView" destination="8YS-H8-oZF" id="gIP-pe-5US"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDz-u1-sIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,7 +273,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="60" height="60"/>
-        <image name="album_default" width="120" height="120"/>
+        <image name="album_add" width="60" height="60"/>
+        <image name="album_default" width="70" height="70"/>
+        <image name="photo_camera" width="60" height="60"/>
     </resources>
 </document>

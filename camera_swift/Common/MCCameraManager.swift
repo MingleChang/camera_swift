@@ -14,16 +14,12 @@ class MCCameraManager: NSObject {
 
     override init(){
         super.init()
-        self.cameraPath=MCFilePath.directoryPathInDocument("Camera")!
-        self.dbPath=MCFilePath.pathInDirectory(self.cameraPath, item: "camera.sqlite")
-        self.dbQueue=FMDatabaseQueue(path:self.dbPath)
+        self.dbQueue=FMDatabaseQueue(path:DB_PATH)
         self.createTable()
         self.albums=self.selectAlbum()
-        print(self.cameraPath)
+        MCLog(CAMERA_PATH)
     }
     
-    var cameraPath:String!
-    var dbPath:String!
     var dbQueue:FMDatabaseQueue!
     var albums:[MCAlbum]!
 }
@@ -92,5 +88,14 @@ extension MCCameraManager{
         }
         self.dbQueue.inDatabase(block)
         return lResults
+    }
+    
+    func insertPhoto(photo:MCPhoto) -> Bool {
+        var success=false
+        func block(db:FMDatabase!){
+            success=db.executeUpdate(MCPhoto.insertPhotoSQL(), withParameterDictionary: photo.toDBDictionary())
+        }
+        self.dbQueue.inDatabase(block)
+        return success
     }
 }
