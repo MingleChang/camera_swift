@@ -73,13 +73,9 @@ class MCImagesToVideo: NSObject {
                         writerInput.markAsFinished()
                         videoWriter.finishWritingWithCompletionHandler({ () -> Void in
                             if (videoWriter.status == AVAssetWriterStatus.Completed){
-                                if let block = callBack{
-                                    block(true)
-                                }
+                                callBack?(true)
                             }else{
-                                if let block = callBack{
-                                    block(false)
-                                }
+                                callBack?(false)
                             }
                         })
                         break
@@ -87,9 +83,7 @@ class MCImagesToVideo: NSObject {
                 }
             }
         }catch{
-            if let block = callBack{
-                block(false)
-            }
+            callBack?(false)
             return
         }
     }
