@@ -11,7 +11,7 @@ import UIKit
 class MCCameraManager: NSObject {
     //MARK:单例
     static let shareInstance=MCCameraManager()
-
+    
     override init(){
         super.init()
         self.dbQueue=FMDatabaseQueue(path:DB_PATH)

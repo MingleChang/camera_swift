@@ -16,7 +16,7 @@ class MCImagesToVideo: NSObject {
     static let FramesToWaitBeforeTransition=40
     
     
-    class func writeImageAsMovie(array:[UIImage], path:String, size:CGSize, fps:Int, shouldAnimateTransitions:Bool,callBack:successBlock?){
+    class func writeImageAsMovie(array:[UIImage], path:String, size:CGSize, fps:Int, shouldAnimateTransitions:Bool,callBack:boolBlock?){
         do{
             let videoWriter=try AVAssetWriter(URL: NSURL(fileURLWithPath: path), fileType: AVFileTypeMPEG4)
             

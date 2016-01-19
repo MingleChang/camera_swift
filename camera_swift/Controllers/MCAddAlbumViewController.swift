@@ -89,6 +89,7 @@ extension MCAddAlbumViewController{
     }
     
     func saveAlbum(){
+        
         self.albumTitleText.resignFirstResponder()
         if let title=self.checkTitle(){
             let lAlbum=MCAlbum()
