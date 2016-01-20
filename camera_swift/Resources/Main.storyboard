@@ -246,6 +246,9 @@
                                             <constraint firstItem="5ZF-Gv-Pnq" firstAttribute="centerY" secondItem="ede-B7-PhP" secondAttribute="centerY" id="Fl7-Ho-XqQ"/>
                                             <constraint firstItem="5ZF-Gv-Pnq" firstAttribute="centerX" secondItem="ede-B7-PhP" secondAttribute="centerX" id="HmN-9R-3ht"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="vLx-N9-XfM" kind="push" identifier="MCCameraViewController" id="0xz-fA-mjb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -270,6 +273,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDz-u1-sIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="212" y="1119"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="vkB-K8-e5k">
+            <objects>
+                <viewController storyboardIdentifier="MCCameraViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vLx-N9-XfM" customClass="MCCameraViewController" customModule="camera_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sPH-LB-5K9"/>
+                        <viewControllerLayoutGuide type="bottom" id="OQn-YG-Ysn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1lg-Sv-3Mo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z0q-ar-lSr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14g-86-8qK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590" y="1119"/>
         </scene>
     </scenes>
     <resources>

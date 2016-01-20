@@ -37,6 +37,7 @@
 		4C5A63C61C3526E3003608FB /* MCPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5A63C41C3526E3003608FB /* MCPhotoCell.xib */; };
 		4C5A63C91C352721003608FB /* MCAddPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5A63C71C352721003608FB /* MCAddPhotoCell.swift */; };
 		4C5A63CA1C352721003608FB /* MCAddPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5A63C81C352721003608FB /* MCAddPhotoCell.xib */; };
+		4C6C40A21C4F70EF00B91DBE /* MCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C40A11C4F70EF00B91DBE /* MCCameraViewController.swift */; };
 		4C7CFAD71C2D4165009BECD4 /* MCAddAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */; };
 		4C85D7351C2CE794006C923E /* MCPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85D7341C2CE794006C923E /* MCPhoto.swift */; };
 		4CA2916E1C3A37F80078927B /* MCImagesToVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2916D1C3A37F80078927B /* MCImagesToVideo.swift */; };
@@ -82,6 +83,7 @@
 		4C5A63C41C3526E3003608FB /* MCPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCPhotoCell.xib; sourceTree = "<group>"; };
 		4C5A63C71C352721003608FB /* MCAddPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAddPhotoCell.swift; sourceTree = "<group>"; };
 		4C5A63C81C352721003608FB /* MCAddPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCAddPhotoCell.xib; sourceTree = "<group>"; };
+		4C6C40A11C4F70EF00B91DBE /* MCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCCameraViewController.swift; sourceTree = "<group>"; };
 		4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAddAlbumViewController.swift; sourceTree = "<group>"; };
 		4C85D7341C2CE794006C923E /* MCPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCPhoto.swift; sourceTree = "<group>"; };
 		4CA2916D1C3A37F80078927B /* MCImagesToVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCImagesToVideo.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				4C0BFC461C2BAE50006D482E /* MCAlbumViewController.swift */,
 				4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */,
 				4C5A63C11C3506C8003608FB /* MCAlbumDetailViewController.swift */,
+				4C6C40A11C4F70EF00B91DBE /* MCCameraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				TargetAttributes = {
 					4C0BFC191C2B916F006D482E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = A63PYRJ6JU;
 					};
 				};
 			};
@@ -348,6 +352,7 @@
 				4C0BFCFD1C2BB44D006D482E /* FMDatabase.m in Sources */,
 				4C0BFCFC1C2BB44D006D482E /* FMDatabaseVariadic.swift in Sources */,
 				4C0BFC451C2B9646006D482E /* MCStringExtension.swift in Sources */,
+				4C6C40A21C4F70EF00B91DBE /* MCCameraViewController.swift in Sources */,
 				4C0BFCFE1C2BB44D006D482E /* FMDatabaseAdditions.m in Sources */,
 				4C0BFD071C2BB626006D482E /* MCAlbumCell.swift in Sources */,
 				4C0BFC431C2B9472006D482E /* MCDevice.swift in Sources */,
@@ -460,14 +465,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = camera_swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = mingle.chang.camera;
+				PRODUCT_BUNDLE_IDENTIFIER = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "camera_swift/camera_swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -478,13 +486,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = camera_swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mingle.chang.camera;
+				PRODUCT_BUNDLE_IDENTIFIER = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "camera_swift/camera_swift-Bridging-Header.h";
 			};
 			name = Release;

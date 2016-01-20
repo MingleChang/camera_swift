@@ -15,8 +15,17 @@ class MCImagesToVideo: NSObject {
     static let TransitionFrameCount=50
     static let FramesToWaitBeforeTransition=40
     
+    class func saveImagesToMovie(array:[UIImage], path:String, size:CGSize, fps:Int, shouldAnimateTransitions:Bool,progress:progressBlock?,callBack:boolBlock?) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            if(NSFileManager.defaultManager().fileExistsAtPath(path)){
+                try! NSFileManager.defaultManager().removeItemAtPath(path)
+            }
+            self.writeImageAsMovie(array, path: path, size: size, fps: fps, shouldAnimateTransitions: shouldAnimateTransitions, progress: progress, callBack: callBack)
+        }
+    }
     
-    class func writeImageAsMovie(array:[UIImage], path:String, size:CGSize, fps:Int, shouldAnimateTransitions:Bool,callBack:boolBlock?){
+    
+    private class func writeImageAsMovie(array:[UIImage], path:String, size:CGSize, fps:Int, shouldAnimateTransitions:Bool,progress:progressBlock?,callBack:boolBlock?){
         do{
             let videoWriter=try AVAssetWriter(URL: NSURL(fileURLWithPath: path), fileType: AVFileTypeMPEG4)
             
@@ -41,7 +50,7 @@ class MCImagesToVideo: NSObject {
             
             var presentTime=CMTime(value: 0, timescale: Int32(fps))
             var i=0
-            
+    
             while(true){
                 if(writerInput.readyForMoreMediaData){
                     presentTime=CMTime(value: Int64(i), timescale: Int32(fps))
@@ -69,6 +78,7 @@ class MCImagesToVideo: NSObject {
                             }
                         }
                         i++
+                        progress?(CGFloat(i)/CGFloat(array.count))
                     }else{
                         writerInput.markAsFinished()
                         videoWriter.finishWritingWithCompletionHandler({ () -> Void in
@@ -88,7 +98,7 @@ class MCImagesToVideo: NSObject {
         }
     }
     
-    class func pixelBufferFromCGImage(image:CGImageRef,size imageSize:CGSize) -> CVPixelBufferRef {
+    private class func pixelBufferFromCGImage(image:CGImageRef,size imageSize:CGSize) -> CVPixelBufferRef {
         let options:[NSObject:AnyObject]=[kCVPixelBufferCGImageCompatibilityKey:true,kCVPixelBufferCGBitmapContextCompatibilityKey:true]
         var pixelBuffer: CVPixelBuffer? = nil
         let status=CVPixelBufferCreate(kCFAllocatorDefault, Int(imageSize.width), Int(imageSize.height), OSType(kCVPixelFormatType_32ARGB), options, &pixelBuffer)

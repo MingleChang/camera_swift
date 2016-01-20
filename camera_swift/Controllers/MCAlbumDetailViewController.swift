@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MCAlbumDetailViewController: MCViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class MCAlbumDetailViewController: MCViewController {
     //MARK:cell的id值
     let PHOTO_CELL_ID="MCPhotoCell"
     let ADD_PHOTO_CELL_ID="MCAddPhotoCell"
@@ -66,15 +66,15 @@ extension MCAlbumDetailViewController{
             let image=photo.image
             imageArray.append(image)
         }
-        MCImagesToVideo.writeImageAsMovie(imageArray, path: self.album.videoPath, size: CGSizeMake(640, 640), fps: 2, shouldAnimateTransitions: true) { (success:Bool) -> Void in
-            if success{
-                MCLog("Complete")
-            }else{
-                MCLog("Failed")
-            }
-            
-        }
-        MCLog("Over")
+        MCImagesToVideo.saveImagesToMovie(imageArray, path: self.album.videoPath, size: CGSizeMake(640, 640), fps: 2, shouldAnimateTransitions: true, progress: { (progress:CGFloat) -> Void in
+            MCLog("\(progress)")
+            }, callBack: { (success:Bool) -> Void in
+                if success{
+                    MCLog("Complete")
+                }else{
+                    MCLog("Failed")
+                }
+        })
     }
 }
 
@@ -101,13 +101,7 @@ extension MCAlbumDetailViewController{
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView .deselectItemAtIndexPath(indexPath, animated: true)
         let row=indexPath.row
-        if (row == self.photos.count){
-            let lViewController=UIImagePickerController()
-            lViewController.delegate=self
-            lViewController.allowsEditing = true;
-            lViewController.sourceType=UIImagePickerControllerSourceType.PhotoLibrary
-            self.presentViewController(lViewController, animated: true, completion: nil)
-        }else{
+        if (row < self.photos.count){
             
         }
     }
@@ -130,24 +124,5 @@ extension MCAlbumDetailViewController{
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize{
         return CGSizeZero
-    }
-}
-
-
-//TODD:目前先从相册中获取图片，之后删除，改为自定义拍照
-extension MCAlbumDetailViewController{
-    //MARK:UIImagePickerController Delegate
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let lImage=info["UIImagePickerControllerEditedImage"] as! UIImage
-        let photo=MCPhoto(AlbumId: self.album.id)
-        photo.save(withImage: lImage)
-//        self.albumImageView.image=lImage
-//        self.isSelectImage=true
-        self.photos.append(photo)
-        self.collectionView.reloadData()
-        picker.dismissViewControllerAnimated(true, completion: nil)
-    }
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
