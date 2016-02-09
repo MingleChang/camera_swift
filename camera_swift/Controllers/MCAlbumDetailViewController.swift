@@ -101,7 +101,13 @@ extension MCAlbumDetailViewController{
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView .deselectItemAtIndexPath(indexPath, animated: true)
         let row=indexPath.row
-        if (row < self.photos.count){
+        if (row == self.photos.count){
+//            let lViewController=UIImagePickerController()
+//            lViewController.delegate=self
+//            lViewController.allowsEditing = true;
+//            lViewController.sourceType=UIImagePickerControllerSourceType.PhotoLibrary
+//            self.presentViewController(lViewController, animated: true, completion: nil)
+        }else{
             
         }
     }

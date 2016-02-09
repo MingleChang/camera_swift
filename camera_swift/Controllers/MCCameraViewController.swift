@@ -2,7 +2,6 @@
 //  MCCameraViewController.swift
 //  camera_swift
 //
-//  Created by cjw on 16/1/20.
 //  Copyright © 2016年 MingleChang. All rights reserved.
 //
 
@@ -12,7 +11,6 @@ class MCCameraViewController: MCViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -45,5 +43,13 @@ class MCCameraViewController: MCViewController {
     override func resetNavigationItem() {
         
     }
+}
 
+extension MCCameraViewController{
+    @IBAction func cameraButtonClick(sender: UIButton) {
+    }
+    
+    @IBAction func backButtonClick(sender: UIButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 }

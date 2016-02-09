@@ -41,6 +41,7 @@
 		4C7CFAD71C2D4165009BECD4 /* MCAddAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */; };
 		4C85D7351C2CE794006C923E /* MCPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85D7341C2CE794006C923E /* MCPhoto.swift */; };
 		4CA2916E1C3A37F80078927B /* MCImagesToVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2916D1C3A37F80078927B /* MCImagesToVideo.swift */; };
+		824B88901C69D7CF0088F777 /* MCCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B888F1C69D7CF0088F777 /* MCCameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAddAlbumViewController.swift; sourceTree = "<group>"; };
 		4C85D7341C2CE794006C923E /* MCPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCPhoto.swift; sourceTree = "<group>"; };
 		4CA2916D1C3A37F80078927B /* MCImagesToVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCImagesToVideo.swift; sourceTree = "<group>"; };
+		824B888F1C69D7CF0088F777 /* MCCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +152,7 @@
 				4C0BFC461C2BAE50006D482E /* MCAlbumViewController.swift */,
 				4C7CFAD61C2D4165009BECD4 /* MCAddAlbumViewController.swift */,
 				4C5A63C11C3506C8003608FB /* MCAlbumDetailViewController.swift */,
-				4C6C40A11C4F70EF00B91DBE /* MCCameraViewController.swift */,
+				824B888F1C69D7CF0088F777 /* MCCameraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -352,7 +354,7 @@
 				4C0BFCFD1C2BB44D006D482E /* FMDatabase.m in Sources */,
 				4C0BFCFC1C2BB44D006D482E /* FMDatabaseVariadic.swift in Sources */,
 				4C0BFC451C2B9646006D482E /* MCStringExtension.swift in Sources */,
-				4C6C40A21C4F70EF00B91DBE /* MCCameraViewController.swift in Sources */,
+				824B88901C69D7CF0088F777 /* MCCameraViewController.swift in Sources */,
 				4C0BFCFE1C2BB44D006D482E /* FMDatabaseAdditions.m in Sources */,
 				4C0BFD071C2BB626006D482E /* MCAlbumCell.swift in Sources */,
 				4C0BFC431C2B9472006D482E /* MCDevice.swift in Sources */,
