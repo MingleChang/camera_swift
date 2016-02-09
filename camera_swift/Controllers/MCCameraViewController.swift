@@ -29,8 +29,21 @@ class MCCameraViewController: MCViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    //MARK:Override
-    //MARK:Init Methods
+}
+
+//MARK:Event Response
+extension MCCameraViewController{
+    @IBAction func cameraButtonClick(sender: UIButton) {
+    }
+    
+    @IBAction func backButtonClick(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+}
+
+//MARK:Override
+//MARK:Init Methods
+extension MCCameraViewController{
     override func configureView() {
         super.configureView()
     }
@@ -42,14 +55,5 @@ class MCCameraViewController: MCViewController {
     }
     override func resetNavigationItem() {
         
-    }
-}
-
-extension MCCameraViewController{
-    @IBAction func cameraButtonClick(sender: UIButton) {
-    }
-    
-    @IBAction func backButtonClick(sender: UIButton) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

@@ -285,7 +285,41 @@
                     <view key="view" contentMode="scaleToFill" id="1lg-Sv-3Mo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lW-gj-vi1">
+                                <rect key="frame" x="0.0" y="468" width="320" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QN-NL-wf7">
+                                        <rect key="frame" x="129" y="33" width="63" height="34"/>
+                                        <state key="normal" title="Camera"/>
+                                        <connections>
+                                            <action selector="cameraButtonClick:" destination="vLx-N9-XfM" eventType="touchUpInside" id="kzy-gY-soU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQM-gZ-WKm">
+                                        <rect key="frame" x="15" y="33" width="40" height="34"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backButtonClick:" destination="vLx-N9-XfM" eventType="touchUpInside" id="A0P-eT-5Vr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KQM-gZ-WKm" firstAttribute="leading" secondItem="4lW-gj-vi1" secondAttribute="leading" constant="15" id="6XJ-FD-wuw"/>
+                                    <constraint firstItem="3QN-NL-wf7" firstAttribute="centerY" secondItem="4lW-gj-vi1" secondAttribute="centerY" id="KHk-QF-ATG"/>
+                                    <constraint firstItem="3QN-NL-wf7" firstAttribute="centerX" secondItem="4lW-gj-vi1" secondAttribute="centerX" id="MOV-4N-uxK"/>
+                                    <constraint firstItem="3QN-NL-wf7" firstAttribute="centerY" secondItem="KQM-gZ-WKm" secondAttribute="centerY" id="hiN-RO-hLn"/>
+                                    <constraint firstAttribute="height" constant="100" id="lg1-PJ-l6w"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4lW-gj-vi1" secondAttribute="trailing" id="5vc-ds-K73"/>
+                            <constraint firstItem="4lW-gj-vi1" firstAttribute="leading" secondItem="1lg-Sv-3Mo" secondAttribute="leading" id="Ofe-cv-82i"/>
+                            <constraint firstItem="OQn-YG-Ysn" firstAttribute="top" secondItem="4lW-gj-vi1" secondAttribute="bottom" id="wVA-QH-7iQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z0q-ar-lSr"/>
                 </viewController>
