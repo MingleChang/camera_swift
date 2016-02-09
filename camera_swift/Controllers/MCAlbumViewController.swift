@@ -34,9 +34,10 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
             lViewController.album=sender as! MCAlbum
         }
     }
-    
-    //MARK:Override
-    //MARK:Init Methods
+}
+//MARK:Override
+//MARK:Init Methods
+extension MCAlbumViewController{
     override func configureView() {
         super.configureView()
         self.automaticallyAdjustsScrollViewInsets=false
@@ -48,7 +49,6 @@ class MCAlbumViewController: MCViewController ,UICollectionViewDelegate,UICollec
         
     }
 }
-
 //MARK:Delegate
 extension MCAlbumViewController{
     //MARK:UICollectionView DataSource

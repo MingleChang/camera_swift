@@ -39,22 +39,6 @@ class MCAlbumDetailViewController: MCViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    //MARK:Override
-    //MARK:Init Methods
-    override func configureView() {
-        super.configureView()
-        self.automaticallyAdjustsScrollViewInsets=false
-    }
-    override func configureData() {
-        super.configureData()
-        self.photos=MCCameraManager.shareInstance.selectPhoto(inAlbumId: self.album.id)
-    }
-    override func resetNavigationItem() {
-        super.resetNavigationItem()
-        let lSaveBarButtonItem=UIBarButtonItem(title: "生成", style: UIBarButtonItemStyle.Done, target: self, action: "createBarButtonItemClick:")
-        self.navigationItem.rightBarButtonItem=lSaveBarButtonItem
-    }
 }
 
 //MARK:Events Response
@@ -77,7 +61,23 @@ extension MCAlbumDetailViewController{
         })
     }
 }
-
+//MARK:Override
+//MARK:Init Methods
+extension MCAlbumDetailViewController{
+    override func configureView() {
+        super.configureView()
+        self.automaticallyAdjustsScrollViewInsets=false
+    }
+    override func configureData() {
+        super.configureData()
+        self.photos=MCCameraManager.shareInstance.selectPhoto(inAlbumId: self.album.id)
+    }
+    override func resetNavigationItem() {
+        super.resetNavigationItem()
+        let lSaveBarButtonItem=UIBarButtonItem(title: "生成", style: UIBarButtonItemStyle.Done, target: self, action: "createBarButtonItemClick:")
+        self.navigationItem.rightBarButtonItem=lSaveBarButtonItem
+    }
+}
 
 //MARK:Delegate
 extension MCAlbumDetailViewController{
@@ -102,11 +102,7 @@ extension MCAlbumDetailViewController{
         collectionView .deselectItemAtIndexPath(indexPath, animated: true)
         let row=indexPath.row
         if (row == self.photos.count){
-//            let lViewController=UIImagePickerController()
-//            lViewController.delegate=self
-//            lViewController.allowsEditing = true;
-//            lViewController.sourceType=UIImagePickerControllerSourceType.PhotoLibrary
-//            self.presentViewController(lViewController, animated: true, completion: nil)
+            
         }else{
             
         }
